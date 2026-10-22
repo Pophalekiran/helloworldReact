@@ -1,4 +1,13 @@
+import { useState } from "react";
+import Login from "./Login.jsx";
+
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  if (!isLoggedIn) {
+    return <Login onLoginSuccess={() => setIsLoggedIn(true)} />;
+  }
+
   return (
     <main className="welcome">
       <section className="welcome-card" aria-labelledby="welcome-title">
@@ -10,6 +19,13 @@ export default function App() {
         <p className="welcome-copy">
           A fresh start for whatever you want to build next.
         </p>
+        <button
+          className="login-button logout-button"
+          onClick={() => setIsLoggedIn(false)}
+          type="button"
+        >
+          Log out
+        </button>
       </section>
     </main>
   );

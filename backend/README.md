@@ -12,8 +12,10 @@ Start it separately from the project root with `npm run dev`.
 `POST /api/auth/login` accepts JSON with `username` and `password`. The demo
 account is `kiran` / `kiran`; valid credentials return HTTP 200, and invalid
 credentials return HTTP 401. Set `APP_CORS_ALLOWED_ORIGIN` to the deployed
-frontend's origin when hosting the API separately, and set
-`VITE_API_BASE_URL` in the frontend hosting environment to the API base URL.
+frontend's origin when hosting the API separately. The frontend defaults to
+`https://react-backend-production-deb9.up.railway.app`; set
+`VITE_API_BASE_URL` in the frontend hosting environment to override that API
+base URL.
 
 This hardcoded account is for local learning only. Do not use this
 authentication implementation for a public or production app.

@@ -12,7 +12,9 @@ export default function Login({ onLoginSuccess }) {
     setIsSubmitting(true);
 
     try {
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? "";
+      const apiBaseUrl =
+        import.meta.env.VITE_API_BASE_URL ??
+        "https://react-backend-production-deb9.up.railway.app";
       const response = await fetch(`${apiBaseUrl}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
